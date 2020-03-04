@@ -1,5 +1,5 @@
 // ==UserScript==
-// @run-at document-end
+// @run-at document-start
 // @name Amazon URL Cleaner
 // @namespace https://github.com/snowfag/userscripts
 // @author snowfag
@@ -8,5 +8,4 @@
 // @version 2.3
 // @updateURL https://github.com/snowfag/userscripts/raw/master/amazon_url_cleaner.user.js
 // ==/UserScript==
-var newurl = 'https://smile.amazon.com/dp/' + document.getElementById('ASIN').value;
-if (newurl != document.URL) location.replace(newurl);
+history.replaceState(null, "", "/dp/" + document.getElementById('ASIN').value);
